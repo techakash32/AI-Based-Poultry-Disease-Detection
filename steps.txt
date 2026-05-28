@@ -1,0 +1,10 @@
+
+
+uv venv
+
+python template.py 
+
+src > classifier > __init__.py 
+
+
+src > classifier > constants >  __init__.py 
