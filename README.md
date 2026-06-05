@@ -227,7 +227,7 @@ dlops_ba_p/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/dlops_ba_p.git
+git clone https://github.com/<techakash32>/dlops_ba_p.git
 cd dlops_ba_p
 ```
 
