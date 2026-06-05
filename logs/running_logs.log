@@ -73,3 +73,28 @@ x==========x:]
 [2026-06-04 01:52:19,425: INFO: main: >>>>>> Prepare Base Model completed <<<<<<
 
 x==========x:]
+[2026-06-04 01:55:28,673: INFO: main: >>>>>> Data Ingestion Stage started <<<<<<:]
+[2026-06-04 01:55:28,673: INFO: common: YAML file config\config.yaml loaded successfully:]
+[2026-06-04 01:55:28,673: INFO: common: YAML file params.yaml loaded successfully:]
+[2026-06-04 01:55:28,673: INFO: common: created directory at: artifacts:]
+[2026-06-04 01:55:28,673: INFO: common: created directory at: artifacts/data_ingestion:]
+[2026-06-04 01:55:28,688: INFO: data_ingestion: File already exists of size: ~ 11345 KB:]
+[2026-06-04 01:55:28,962: INFO: main: >>>>>> Data Ingestion Stage completed <<<<<<
+
+x==========x:]
+[2026-06-04 01:55:28,962: INFO: main: >>>>>> Prepare Base Model started <<<<<<:]
+[2026-06-04 01:55:28,962: INFO: common: YAML file config\config.yaml loaded successfully:]
+[2026-06-04 01:55:28,962: INFO: common: YAML file params.yaml loaded successfully:]
+[2026-06-04 01:55:28,970: INFO: common: created directory at: artifacts:]
+[2026-06-04 01:55:28,970: INFO: common: created directory at: artifacts/prepare_base_model:]
+[2026-06-04 01:55:29,468: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. :]
+[2026-06-04 01:55:29,645: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.:]
+[2026-06-04 01:55:29,674: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. :]
+[2026-06-04 01:55:29,868: INFO: main: >>>>>> Prepare Base Model completed <<<<<<
+
+x==========x:]
+[2026-06-05 17:19:09,921: INFO: common: YAML file config\config.yaml loaded successfully:]
+[2026-06-05 17:19:09,937: INFO: common: YAML file params.yaml loaded successfully:]
+[2026-06-05 17:19:09,940: INFO: common: created directory at: artifacts:]
+[2026-06-05 17:19:09,940: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir:]
+[2026-06-05 17:19:09,940: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir:]
