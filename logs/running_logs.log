@@ -269,3 +269,100 @@ x==========x:]
 [2026-06-12 16:59:08,205: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x:]
+[2026-06-16 00:56:52,011: INFO: font_manager: generated new fontManager:]
+[2026-06-16 00:56:54,125: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.190.89.235:8080:]
+[2026-06-16 00:56:54,125: INFO: _internal: [33mPress CTRL+C to quit[0m:]
+[2026-06-16 00:56:57,310: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 00:56:57] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 00:56:57,878: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 00:56:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -:]
+[2026-06-16 00:57:02,735: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 00:57:02] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 00:57:03,586: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 00:57:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -:]
+[2026-06-16 00:59:44,635: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.:]
+[2026-06-16 00:59:44,651: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 00:59:48,089: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 00:59:48] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:01:41,895: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:01:42,705: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:01:42] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:02:03,697: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:02:04,450: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:02:04] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:02:14,483: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:02:15,280: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:02:15] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:03:15,965: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:03:15] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:03:21,148: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:03:21] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:03:21,607: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:03:21] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:03:22,048: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:03:22] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:03:22,531: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:03:22] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:06:15,719: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:06:15] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:17:52,330: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:17:52] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:17:55,724: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:17:55] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:18:01,276: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:18:01] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:18:06,850: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:18:06] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:18:48,335: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.190.89.235:8080:]
+[2026-06-16 01:18:48,335: INFO: _internal: [33mPress CTRL+C to quit[0m:]
+[2026-06-16 01:18:58,426: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:18:58] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:19:07,317: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:19:07] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:19:21,195: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:19:21] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:19:39,431: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.190.89.235:8080:]
+[2026-06-16 01:19:39,433: INFO: _internal: [33mPress CTRL+C to quit[0m:]
+[2026-06-16 01:19:43,497: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:19:43] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:21:11,176: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:21:11] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:26:53,652: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.190.89.235:8080:]
+[2026-06-16 01:26:53,668: INFO: _internal: [33mPress CTRL+C to quit[0m:]
+[2026-06-16 01:26:56,254: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:26:56] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:27:05,055: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:27:05] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:27:14,217: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.:]
+[2026-06-16 01:27:14,217: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:27:15,487: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:27:15] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:27:19,167: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:27:20,188: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:27:20] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:27:25,901: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:27:27,362: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:27:27] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:27:31,638: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:27:33,089: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:27:33] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:27:40,778: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:27:41,680: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000295BEC70400> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.:]
+[2026-06-16 01:27:41,713: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:27:41] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:37:11,207: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.190.89.235:8080:]
+[2026-06-16 01:37:11,208: INFO: _internal: [33mPress CTRL+C to quit[0m:]
+[2026-06-16 01:37:15,642: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:37:15] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:37:23,022: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.:]
+[2026-06-16 01:37:23,029: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:37:24,266: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:37:24] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:37:35,193: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:37:36,183: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:37:36] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:37:38,213: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:37:39,247: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:37:39] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:37:43,150: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:37:44,165: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:37:44] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:38:16,875: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:38:17,829: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000002714D8AC4A0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.:]
+[2026-06-16 01:38:18,373: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:38:18] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:38:22,695: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:38:23,636: WARNING: polymorphic_function: 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000002714D8AE480> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.:]
+[2026-06-16 01:38:23,669: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:38:23] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:40:39,027: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.190.89.235:8080:]
+[2026-06-16 01:40:39,027: INFO: _internal: [33mPress CTRL+C to quit[0m:]
+[2026-06-16 01:40:44,484: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:40:44] "GET / HTTP/1.1" 200 -:]
+[2026-06-16 01:41:03,744: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.:]
+[2026-06-16 01:41:03,752: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:41:04,924: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:41:04] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:41:10,865: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:41:11,919: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:41:11] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-16 01:41:19,695: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-16 01:41:20,763: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:41:20] "POST /predict HTTP/1.1" 200 -:]

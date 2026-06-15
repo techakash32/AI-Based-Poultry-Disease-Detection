@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PoultryGuard AI — Coccidiosis Detector</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f4f2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px;
+    color: #1a1a18;
+  }
+
+  .header {
+    width: 100%; max-width: 960px;
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 28px;
+  }
+  .logo-box {
+    width: 44px; height: 44px; background: #1a1a18;
+    border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .logo-box i { color: #fff; font-size: 22px; }
+  .header-text h1 { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; }
+  .header-text p { font-size: 13px; color: #888780; margin-top: 1px; }
+  .badge-row { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; justify-content: flex-end; }
+  .badge { font-size: 11px; padding: 4px 11px; border-radius: 20px; font-weight: 500; border: 0.5px solid #D3D1C7; color: #5F5E5A; background: #fff; }
+  .badge.dark { background: #1a1a18; color: #fff; border-color: transparent; }
+
+  .card { background: #fff; border-radius: 16px; border: 0.5px solid #D3D1C7; width: 100%; max-width: 960px; overflow: hidden; }
+  .card-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .panel { padding: 24px; }
+  .panel-left { border-right: 0.5px solid #D3D1C7; }
+  .panel-label { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #888780; margin-bottom: 14px; }
+
+  .drop-zone {
+    border: 0.5px dashed #B4B2A9; border-radius: 12px; height: 240px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; cursor: pointer; transition: background 0.15s;
+    position: relative; overflow: hidden; background: #f9f9f8;
+  }
+  .drop-zone:hover { background: #f1efe8; }
+  .drop-zone i { font-size: 36px; color: #B4B2A9; }
+  .drop-zone p { font-size: 13px; color: #5F5E5A; }
+  .drop-zone span { font-size: 11px; color: #B4B2A9; }
+  .drop-zone img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; border-radius: 12px; }
+
+  .action-row { display: flex; gap: 8px; margin-top: 14px; }
+  .btn-sec {
+    flex: 1; padding: 10px; border-radius: 8px; border: 0.5px solid #D3D1C7;
+    background: transparent; color: #1a1a18; font-size: 13px; font-family: 'Inter', sans-serif;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;
+    transition: background 0.12s; font-weight: 500;
+  }
+  .btn-sec:hover { background: #f4f4f2; }
+  .btn-pri {
+    flex: 1; padding: 10px; border-radius: 8px; border: none; background: #1a1a18;
+    color: #fff; font-size: 13px; font-family: 'Inter', sans-serif;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;
+    transition: opacity 0.12s; font-weight: 500;
+  }
+  .btn-pri:hover { opacity: 0.85; }
+
+  .result-area { display: flex; flex-direction: column; gap: 12px; }
+
+  .status-card { border: 0.5px solid #D3D1C7; border-radius: 10px; padding: 14px 16px; background: #f9f9f8; }
+  .status-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .status-pill { font-size: 11px; padding: 3px 10px; border-radius: 20px; border: 0.5px solid #D3D1C7; color: #888780; background: #fff; }
+
+  .ph-rows { display: flex; flex-direction: column; gap: 8px; }
+  .ph-row { height: 9px; background: #D3D1C7; border-radius: 4px; opacity: 0.5; }
+
+  .chip-healthy {
+    display: inline-flex; align-items: center; gap: 5px; padding: 5px 13px;
+    border-radius: 20px; font-size: 13px; font-weight: 500;
+    background: #EAF3DE; color: #3B6D11; border: 0.5px solid #97C459;
+  }
+  .chip-sick {
+    display: inline-flex; align-items: center; gap: 5px; padding: 5px 13px;
+    border-radius: 20px; font-size: 13px; font-weight: 500;
+    background: #FCEBEB; color: #A32D2D; border: 0.5px solid #F09595;
+  }
+
+  .conf-wrap { margin-top: 12px; }
+  .conf-meta { display: flex; justify-content: space-between; font-size: 11px; color: #888780; margin-bottom: 5px; }
+  .conf-track { background: #D3D1C7; border-radius: 4px; height: 5px; overflow: hidden; }
+  .conf-fill { height: 100%; border-radius: 4px; background: #1a1a18; transition: width 0.5s ease; }
+
+  .raw-label { font-size: 11px; color: #888780; margin-top: 10px; }
+  .raw-label span { font-family: 'Courier New', monospace; background: #f1efe8; padding: 2px 6px; border-radius: 4px; color: #5F5E5A; }
+
+  .result-img-wrap { border: 0.5px solid #D3D1C7; border-radius: 10px; overflow: hidden; display: none; }
+  .result-img-wrap img { width: 100%; display: block; }
+
+  .json-box {
+    border: 0.5px solid #D3D1C7; border-radius: 10px; padding: 14px 16px;
+    background: #f9f9f8; font-family: 'Courier New', monospace; font-size: 12px;
+    color: #888780; min-height: 90px; line-height: 1.7; overflow: auto;
+  }
+  .json-box pre { color: #1a1a18; }
+
+  .card-footer {
+    border-top: 0.5px solid #D3D1C7; padding: 12px 24px;
+    display: flex; align-items: center; gap: 8px; background: #f9f9f8;
+  }
+  .footer-dot { width: 7px; height: 7px; border-radius: 50%; background: #D3D1C7; transition: background 0.3s; }
+  .card-footer span { font-size: 12px; color: #888780; }
+
+  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: none; align-items: center; justify-content: center; z-index: 999; }
+  .overlay.show { display: flex; }
+  .spinner { width: 38px; height: 38px; border: 3px solid rgba(255,255,255,0.25); border-top-color: #fff; border-radius: 50%; animation: spin 0.75s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  input[type=file] { display: none; }
+
+  @media (max-width: 640px) {
+    .card-body { grid-template-columns: 1fr; }
+    .panel-left { border-right: none; border-bottom: 0.5px solid #D3D1C7; }
+    .badge-row { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-box"><i class="ti ti-vaccine"></i></div>
+  <div class="header-text">
+    <h1>PoultryGuard AI</h1>
+    <p>Coccidiosis detection · fecal image classifier · end-to-end MLOps</p>
+  </div>
+  <div class="badge-row">
+    <span class="badge dark">Deep learning</span>
+    <span class="badge">CNN classifier</span>
+    <span class="badge">Coccidiosis vs Healthy</span>
+  </div>
+</header>
+
+<div class="card">
+  <div class="card-body">
+
+    <!-- LEFT: upload -->
+    <div class="panel panel-left">
+      <p class="panel-label">Upload fecal image</p>
+
+      <div class="drop-zone" id="dropZone">
+        <i class="ti ti-photo-up"></i>
+        <p>Drop image here or click to browse</p>
+        <span>PNG · JPG · JPEG · max 10 MB</span>
+        <img id="preview" alt="Preview">
+      </div>
+
+      <div class="action-row">
+        <button class="btn-sec" id="uload"><i class="ti ti-folder-open"></i> Browse</button>
+        <button class="btn-pri" id="send"><i class="ti ti-cpu"></i> Run prediction</button>
+      </div>
+
+      <!-- BACKEND CONFIG — UNCHANGED -->
+      <input type="hidden" id="url" value="../predict">
+      <input type="file" id="fileinput" accept="image/*">
+    </div>
+
+    <!-- RIGHT: results -->
+    <div class="panel">
+      <p class="panel-label">Prediction output</p>
+      <div class="result-area">
+
+        <div class="status-card">
+          <div class="status-top">
+            <span class="panel-label" style="margin:0">Classification result</span>
+            <span class="status-pill" id="statusPill">Awaiting image</span>
+          </div>
+
+          <!-- placeholder skeleton -->
+          <div class="ph-rows" id="phRows">
+            <div class="ph-row" style="width:70%"></div>
+            <div class="ph-row" style="width:50%"></div>
+            <div class="ph-row" style="width:60%"></div>
+          </div>
+
+          <!-- actual result -->
+          <div id="resultDisplay" style="display:none">
+            <div id="chip"></div>
+            <div class="conf-wrap" id="confWrap" style="display:none">
+              <div class="conf-meta">
+                <span>Confidence</span>
+                <span id="confVal"></span>
+              </div>
+              <div class="conf-track">
+                <div class="conf-fill" id="confFill" style="width:0%"></div>
+              </div>
+            </div>
+            <p class="raw-label">Raw response key: <span id="rawKey"></span></p>
+          </div>
+        </div>
+
+        <div class="result-img-wrap" id="resultImgBox">
+          <img id="resultImg" alt="Model output visualisation">
+        </div>
+
+        <div class="json-box" id="jsonResult">// Raw model output will appear here</div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="footer-dot" id="footerDot"></div>
+    <span id="footerMsg">Ready — upload a fecal image to begin</span>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"><div class="spinner"></div></div>
+
+<script>
+let base_data = "";
+
+const el = id => document.getElementById(id);
+
+el('uload').addEventListener('click', () => el('fileinput').click());
+el('dropZone').addEventListener('click', () => el('fileinput').click());
+
+el('dropZone').addEventListener('dragover', e => { e.preventDefault(); el('dropZone').style.background = '#f1efe8'; });
+el('dropZone').addEventListener('dragleave', () => { el('dropZone').style.background = ''; });
+el('dropZone').addEventListener('drop', e => {
+  e.preventDefault(); el('dropZone').style.background = '';
+  if (e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
+});
+el('fileinput').addEventListener('change', function () { if (this.files[0]) loadFile(this.files[0]); });
+
+function loadFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = function () {
+      const canvas = document.createElement('canvas');
+      canvas.width = this.width; canvas.height = this.height;
+      canvas.getContext('2d').drawImage(this, 0, 0);
+      base_data = canvas.toDataURL('image/jpeg').replace(/^data:image.+;base64,/, '');
+    };
+    img.src = e.target.result;
+    el('preview').src = e.target.result;
+    el('preview').style.display = 'block';
+    el('statusPill').textContent = 'Image ready';
+    el('footerMsg').textContent = 'Image loaded — click "Run prediction" to classify';
+  };
+  reader.readAsDataURL(file);
+}
+
+el('send').addEventListener('click', () => {
+  if (!base_data) { alert('Please upload a fecal image first.'); return; }
+  el('overlay').classList.add('show');
+  el('footerMsg').textContent = 'Running inference…';
+
+  fetch(el('url').value, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ image: base_data })
+  })
+  .then(r => r.json())
+  .then(res => {
+    el('overlay').classList.remove('show');
+    el('phRows').style.display = 'none';
+    el('resultDisplay').style.display = 'block';
+
+    const data = res[0];
+
+    // ── Robust label extraction ──
+    // Tries every common key your backend might use.
+    // If none match, falls back to the first string value found in the object.
+    let label = data?.class
+              || data?.label
+              || data?.prediction
+              || data?.result
+              || data?.image   // ← your current backend key
+              || data?.name
+              || null;
+
+    // Last resort: grab the first string value in the response object
+    if (!label) {
+      for (const v of Object.values(data || {})) {
+        if (typeof v === 'string') { label = v; break; }
+      }
+    }
+
+    label = (label || 'Unknown').trim();
+
+    // Show which key was actually used, for debugging
+    const usedKey = Object.keys(data || {}).find(k =>
+      typeof data[k] === 'string' && data[k].trim() === label
+    ) || '?';
+    el('rawKey').textContent = `"${usedKey}": "${label}"`;
+
+    const isHealthy = label.toLowerCase().includes('healthy');
+
+    el('chip').innerHTML = isHealthy
+      ? '<span class="chip-healthy"><i class="ti ti-check"></i> Healthy</span>'
+      : '<span class="chip-sick"><i class="ti ti-alert-triangle"></i> Coccidiosis detected</span>';
+
+    // Confidence (optional — hide bar if not in response)
+    const conf = data?.confidence ?? data?.probability ?? data?.score ?? null;
+    if (conf !== null) {
+      const pct = Math.round(conf * 100);
+      el('confVal').textContent = pct + '%';
+      el('confFill').style.width = pct + '%';
+      el('confWrap').style.display = 'block';
+    }
+
+    el('statusPill').textContent = 'Complete';
+    el('footerDot').style.background = isHealthy ? '#639922' : '#E24B4A';
+    el('footerMsg').textContent = isHealthy
+      ? 'Result: no disease detected in this sample'
+      : 'Result: Coccidiosis markers detected — consult a veterinarian';
+
+    el('jsonResult').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+
+    if (res[1]?.image) {
+      el('resultImg').src = 'data:image/jpeg;base64,' + res[1].image;
+      el('resultImgBox').style.display = 'block';
+    }
+  })
+  .catch(() => {
+    el('overlay').classList.remove('show');
+    el('jsonResult').textContent = 'Error: could not reach prediction endpoint.';
+    el('footerMsg').textContent = 'Request failed — check your backend connection';
+  });
+});
+</script>
+</body>
+</html>
