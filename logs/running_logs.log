@@ -366,3 +366,17 @@ x==========x:]
 [2026-06-16 01:41:11,919: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:41:11] "POST /predict HTTP/1.1" 200 -:]
 [2026-06-16 01:41:19,695: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
 [2026-06-16 01:41:20,763: INFO: _internal: 127.0.0.1 - - [16/Jun/2026 01:41:20] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-17 15:09:01,439: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.33.27:8080:]
+[2026-06-17 15:09:01,441: INFO: _internal: [33mPress CTRL+C to quit[0m:]
+[2026-06-17 15:09:03,556: INFO: _internal: 127.0.0.1 - - [17/Jun/2026 15:09:03] "GET / HTTP/1.1" 200 -:]
+[2026-06-17 15:09:09,533: INFO: _internal: 127.0.0.1 - - [17/Jun/2026 15:09:09] "GET / HTTP/1.1" 200 -:]
+[2026-06-17 15:09:09,707: INFO: _internal: 127.0.0.1 - - [17/Jun/2026 15:09:09] "GET / HTTP/1.1" 200 -:]
+[2026-06-17 15:09:10,534: INFO: _internal: 127.0.0.1 - - [17/Jun/2026 15:09:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -:]
+[2026-06-17 15:09:52,153: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.:]
+[2026-06-17 15:09:52,158: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-17 15:09:53,418: INFO: _internal: 127.0.0.1 - - [17/Jun/2026 15:09:53] "POST /predict HTTP/1.1" 200 -:]
+[2026-06-17 15:09:59,873: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.:]
+[2026-06-17 15:10:01,350: INFO: _internal: 127.0.0.1 - - [17/Jun/2026 15:10:01] "POST /predict HTTP/1.1" 200 -:]
